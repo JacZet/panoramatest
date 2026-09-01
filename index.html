@@ -98,6 +98,11 @@
 				document.addEventListener( 'mouseup', onDocumentMouseUp, false );
 				document.addEventListener( 'wheel', onDocumentMouseWheel, false );
 
+				document.addEventListener('touchstart', onDocumentTouchStart, { passive: false });
+				document.addEventListener('touchmove', onDocumentTouchMove, { passive: false });
+				document.addEventListener('touchend', onDocumentTouchEnd);
+
+				
 				//
 
 				document.addEventListener( 'dragover', function ( event ) {
