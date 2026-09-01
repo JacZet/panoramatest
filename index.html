@@ -182,6 +182,34 @@
 
 			}
 
+			// TOUCH (PHONE)
+			function onDocumentTouchStart(event) {
+			    event.preventDefault();
+			
+			    isUserInteracting = true;
+			
+			    const touch = event.touches[0];
+			
+			    onPointerDownPointerX = touch.clientX;
+			    onPointerDownPointerY = touch.clientY;
+			
+			    onPointerDownLon = lon;
+			    onPointerDownLat = lat;
+			}			
+			function onDocumentTouchMove(event) {
+			    if (isUserInteracting === true) {
+			
+			        const touch = event.touches[0];
+			
+			        lon = (onPointerDownPointerX - touch.clientX) * 0.1 + onPointerDownLon;
+			        lat = (touch.clientY - onPointerDownPointerY) * 0.1 + onPointerDownLat;
+			    }
+			}			
+			function onDocumentTouchEnd(event) {
+			    isUserInteracting = false;
+			}
+			
+
 			function onDocumentMouseWheel( event ) {
 				// zoom kolko wylaczone ->0.00 
 				camera.fov += event.deltaY * 0.02;
