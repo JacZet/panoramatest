@@ -30,6 +30,7 @@
 	<body>
 
 		<div id="container"></div>
+		<button id="przycisk" style="position: absolute; top: 0; font-size: large;">przełącznik</button>
 		<div id="info">
 			<a href="https://archimatic.pl" target="_blank">archimatic.pl</a><br />
 			<br />
@@ -73,9 +74,11 @@
 				
 				// THREE.NearestFilter    THREE.LinearFilter
 				texture2.magFilter = THREE.NearestFilter;
+				texture2x.magFilter = THREE.NearestFilter;
 				
 				// THREE.NearestFilter    THREE.NearestMipMapNearestFilter   THREE.NearestMipMapLinearFilter  THREE.LinearFilter THREE.LinearMipMapNearestFilter  THREE.LinearMipMapLinearFilter
 				texture2.minFilter = THREE.LinearFilter;
+				texture2x.minFilter = THREE.LinearFilter;
 				
 				
 				//endVajpa
@@ -90,7 +93,7 @@
 				
 
 				mesh = new THREE.Mesh( geometry, material );
-				meshx = new THREE.Mesh( geometry, texture2x );
+				meshx = new THREE.Mesh( geometry, materialx );
 				meshx.visible = false;
 				
 				scene.add( mesh );
