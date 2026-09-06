@@ -96,6 +96,11 @@
 				scene.add( mesh );
 				scene.add( meshx );
 
+				document.getElementById("przycisk").addEventListener("click", function() {
+					mesh.visible = !mesh.visible; // Switch between visible and hidden
+					meshx.visible = !mesh.visible; // Switch between visible and hidden
+				});
+
 				renderer = new THREE.WebGLRenderer();
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
