@@ -34,6 +34,7 @@
 			<a href="https://archimatic.pl" target="_blank">archimatic.pl</a><br />
 			<br />
 		</div>
+		<button id="przycisk"></button>
 
 		<script src="three.js"></script>
 
@@ -90,7 +91,8 @@
 
 				mesh = new THREE.Mesh( geometry, material );
 				meshx = new THREE.Mesh( geometry, texture2x );
-
+				meshx.visible = false;
+				
 				scene.add( mesh );
 				scene.add( meshx );
 
