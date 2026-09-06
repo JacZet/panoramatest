@@ -67,6 +67,7 @@
 				// BY VIPER =>
 				var textureLoaderX = new THREE.TextureLoader();
 				var texture2 = textureLoaderX.load( "Pano2RGB.jpg" );
+				var texture2x = textureLoaderX.load( "Pano2xRGB.jpg" );
 				//texture2.anisotropy = 16;
 				
 				// THREE.NearestFilter    THREE.LinearFilter
@@ -82,11 +83,16 @@
 				var material = new THREE.MeshBasicMaterial( {
 					map: texture2
 				} );
+				var materialx = new THREE.MeshBasicMaterial( {
+					map: texture2x
+				} );
 				
 
 				mesh = new THREE.Mesh( geometry, material );
+				meshx = new THREE.Mesh( geometry, texture2x );
 
 				scene.add( mesh );
+				scene.add( meshx );
 
 				renderer = new THREE.WebGLRenderer();
 				renderer.setPixelRatio( window.devicePixelRatio );
