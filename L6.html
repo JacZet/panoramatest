@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -35,11 +36,6 @@
 			<a href="https://archimatic.pl" target="_blank">archimatic.pl</a><br />
 			<br />
 			<button id="przycisk" margin-top: 2em; font-size: large;">przełącznik</button>
-			<a href="./L1" target="_blank" rel="noopener noreferrer">L1</a><br />
-			<a href="./L2" target="_blank" rel="noopener noreferrer">L2</a><br />
-			<a href="./L3" target="_blank" rel="noopener noreferrer">L3</a><br />
-			<a href="./L4" target="_blank" rel="noopener noreferrer">L4</a><br />
-			<a href="./L6" target="_blank" rel="noopener noreferrer">L6</a><br />
 		</div>
 
 		<script src="three.js"></script>
@@ -59,6 +55,12 @@
 
 			function init() {
 
+				// BY VIPER =>
+				var textureLoaderX = new THREE.TextureLoader();
+				var texture2 = textureLoaderX.load( "L6.jpg" );
+				var texture2x = textureLoaderX.load( "L6b.jpg" );
+				//texture2.anisotropy = 16;
+
 				var container, mesh;
 
 				container = document.getElementById( 'container' );
@@ -71,11 +73,11 @@
 				var geometry = new THREE.SphereGeometry( 500, 60, 40 );
 				geometry.scale( - 1, 1, 1 );
 				
-				// BY VIPER =>
-				var textureLoaderX = new THREE.TextureLoader();
-				var texture2 = textureLoaderX.load( "Pano2RGB.jpg" );
-				var texture2x = textureLoaderX.load( "Pano2xRGB.jpg" );
-				//texture2.anisotropy = 16;
+				// // BY VIPER =>
+				// var textureLoaderX = new THREE.TextureLoader();
+				// var texture2 = textureLoaderX.load( "Pano2RGB.jpg" );
+				// var texture2x = textureLoaderX.load( "Pano2xRGB.jpg" );
+				// //texture2.anisotropy = 16;
 				
 				// THREE.NearestFilter    THREE.LinearFilter
 				texture2.magFilter = THREE.NearestFilter;
